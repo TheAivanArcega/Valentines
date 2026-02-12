@@ -11,6 +11,16 @@ export default function ValentineInvitation() {
   const [isMuted, setIsMuted] = useState(false);
   const audioRef = useRef(null);
 
+  // Photo URLs for each stage - REPLACE THESE WITH YOUR PHOTO URLS
+  const photos = {
+    landing: 'https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?w=800&h=600&fit=crop', // Replace with your photo
+    trivia: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800&h=600&fit=crop', // Replace with your photo
+    reveal: 'https://images.unsplash.com/photo-1522673607212-f2f15dd6d958?w=800&h=600&fit=crop', // Replace with your photo
+    countdown: 'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=800&h=600&fit=crop', // Replace with your photo
+    rsvp: 'https://images.unsplash.com/photo-1516589091380-5d8e87df6999?w=800&h=600&fit=crop', // Replace with your photo
+    celebration: 'https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?w=800&h=600&fit=crop' // Replace with your photo
+  };
+
   // Countdown to Valentine's Day 2026
   useEffect(() => {
     const valentinesDay = new Date('2026-02-14T00:00:00');
@@ -65,7 +75,7 @@ export default function ValentineInvitation() {
 
   const handleTriviaSubmit = () => {
     // Simple check - customize this question and answer!
-    const correctAnswer = "7/11 Doroteo Jose"; // Change this to your answer
+    const correctAnswer = "paris"; // Change this to your answer
     if (triviaAnswer.toLowerCase().trim() === correctAnswer) {
       setStage('reveal');
     } else {
@@ -206,7 +216,10 @@ export default function ValentineInvitation() {
               <div className="space-y-6">
                 <div className="bg-rose-50 rounded-2xl p-8 border border-rose-200">
                   <p className="text-2xl text-rose-900 font-medium text-center">
-                    Where did we first meet each other?
+                    Where did we share our first kiss?
+                  </p>
+                  <p className="text-sm text-rose-500 text-center mt-2 font-light">
+                    (Customize this question in the code!)
                   </p>
                 </div>
                 
@@ -261,6 +274,9 @@ export default function ValentineInvitation() {
                           "From the moment we met, you've brought light into my life. 
                           Every day with you is a gift, and I can't imagine celebrating 
                           this Valentine's Day with anyone else. You make my heart sing."
+                        </p>
+                        <p className="text-lg text-rose-600 mt-6 font-light">
+                          — Customize this message to make it yours! 💕
                         </p>
                       </div>
                       
